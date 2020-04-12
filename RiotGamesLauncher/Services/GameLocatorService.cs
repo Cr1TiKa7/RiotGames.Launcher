@@ -12,9 +12,7 @@ using RiotGamesLauncher.Models.Types;
 namespace RiotGamesLauncher.Services
 {
     public class GameLocatorService
-    {
-        //Computer\HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
-
+    { 
         private Regex _pathRegex = new Regex("\\\"([^\\\"]*)\\\"");
         public GameInfo GetGameLocation(GameType gameType)
         {
