@@ -20,3 +20,9 @@ Simply delete it until i've implemented the settings tab.
 
 ## Is this an official launcher made by riot games?
 No.
+
+
+# Upcoming:
+- Implementing a custom window control box (Close, minimize the window).
+- Implementing the settings tab.
+- Fixing some visual stuff.

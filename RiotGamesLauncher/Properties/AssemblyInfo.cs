@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RiotGamesLauncher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("RiotGames.Launcher")]
+[assembly: AssemblyDescription("A simple launcher to start the games made by Riot Games")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RiotGamesLauncher")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyProduct("RiotGames.Launcher")]
+[assembly: AssemblyCopyright("Copyright ©Cr1TiKa7  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
