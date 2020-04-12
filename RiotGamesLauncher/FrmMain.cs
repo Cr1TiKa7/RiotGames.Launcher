@@ -170,5 +170,10 @@ namespace RiotGamesLauncher
                 GameInfos = _gameInfos
             });
         }
+
+        private void OnBtnCloseClick(object sender, System.EventArgs e)
+        {
+            Close();
+        }
     }
 }
