@@ -1,4 +1,4 @@
-﻿namespace RiotGamesLauncher
+﻿namespace RiotGamesLauncher.Controls
 {
     partial class PlayButton
     {

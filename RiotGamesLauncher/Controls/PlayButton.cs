@@ -1,12 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.ConstrainedExecution;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timer = System.Threading.Timer;
 
-namespace RiotGamesLauncher
+namespace RiotGamesLauncher.Controls
 {
     public partial class PlayButton : UserControl
     {
@@ -56,6 +53,7 @@ namespace RiotGamesLauncher
                 }
                 else
                     fadeTimer.Stop();
+
             }
             else
             {

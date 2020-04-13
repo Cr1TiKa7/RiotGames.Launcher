@@ -148,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\twitch.png" />
+    <None Include="Resources\github.png" />
+    <None Include="Resources\baseline_save_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

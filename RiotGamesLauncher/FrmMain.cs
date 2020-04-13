@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
@@ -24,9 +25,7 @@ namespace RiotGamesLauncher
             if (settings != null)
             {
                 _gameInfos = settings.GameInfos;
-                txtValorant.Text = _gameInfos.FirstOrDefault(x => x.Type == GameType.Valorant)?.Location;
-                txtLol.Text = _gameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends)?.Location;
-                txtLor.Text = _gameInfos.FirstOrDefault(x => x.Type == GameType.LegendsOfRuneterra)?.Location;
+                txtRiotServicePath.Text = _gameInfos.FirstOrDefault()?.Location;
             }
             else
                 GetGameInfos();
@@ -36,22 +35,15 @@ namespace RiotGamesLauncher
         {
             var valorant = _gameLocatorService.GetGameLocation(GameType.Valorant);
             if (valorant != null)
-            {
-                txtValorant.Text = valorant.Location;
                 _gameInfos.Add(valorant);
-            }
             var lol = _gameLocatorService.GetGameLocation(GameType.LeagueOfLegends);
             if (lol != null)
-            {
-                txtLol.Text = lol.Location;
+                txtRiotServicePath.Text = lol.Location;
                 _gameInfos.Add(lol);
-            }
             var lor = _gameLocatorService.GetGameLocation(GameType.LegendsOfRuneterra);
             if (lor != null)
-            {
-                txtLor.Text = lor.Location;
                 _gameInfos.Add(lor);
-            }
+
             OnBtnSaveClick(null,null);
         }
 
@@ -93,69 +85,44 @@ namespace RiotGamesLauncher
 
         #endregion
 
-        private void OnBtnBrowserLolClick(object sender, System.EventArgs e)
+        private void OnBtnBrowserLolClick(object sender, EventArgs e)
         {
-            var lolGame = OpenFileDialog(GameType.LeagueOfLegends);
-            var existing = _gameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends);
-            if (existing != null)
-            {
-                _gameInfos.Remove(existing);
-            }
-
-            _gameInfos.Add(lolGame);
-            txtLol.Text = lolGame.Location;
+            var gameInfos = OpenFileDialog();
+            _gameInfos.Clear();
+            _gameInfos = gameInfos;
+            txtRiotServicePath.Text = gameInfos.FirstOrDefault()?.Location;
         }
 
-        private void OnBtnBrowseValorantClick(object sender, System.EventArgs e)
+
+        private List<GameInfo> OpenFileDialog()
         {
-            var valorantGame = OpenFileDialog(GameType.Valorant);
-            var existing = _gameInfos.FirstOrDefault(x => x.Type == GameType.Valorant);
-            if (existing != null)
+            var ret = new List<GameInfo>();
+            using (var ofd = new OpenFileDialog())
             {
-                _gameInfos.Remove(existing);
-            }
-
-            _gameInfos.Add(valorantGame);
-            txtValorant.Text = valorantGame.Location;
-        }
-
-        private void OnBtnBrowseLegendsOfRuneterra(object sender, System.EventArgs e)
-        {
-            var lorGame = OpenFileDialog(GameType.LegendsOfRuneterra);
-            var existing = _gameInfos.FirstOrDefault(x => x.Type == GameType.LegendsOfRuneterra);
-            if (existing != null)
-            {
-                _gameInfos.Remove(existing);
-            }
-
-            _gameInfos.Add(lorGame);
-            txtLor.Text = lorGame.Location;
-        }
-
-        private GameInfo OpenFileDialog(GameType gameType)
-        {
-            GameInfo ret = null;
-            using (var ofd = new OpenFileDialog()) 
-            {
+                ofd.Filter = "(RiotClientServices.exe) | RiotClientServices.exe";
                 if (ofd.ShowDialog(this) == DialogResult.OK)
                 {
-                    ret = new GameInfo();
-                    ret.Location = ofd.FileName;
-
-                    switch (gameType)
+                    foreach (var gameType in Enum.GetValues(typeof(GameType)))
                     {
-                        case GameType.LeagueOfLegends:
-                            ret.Name = "League Of Legends";
-                            ret.PathAddition = " --launch-product=league_of_legends --launch-patchline=live";
-                            break;
-                        case GameType.Valorant:
-                            ret.Name = "Valorant";
-                            ret.PathAddition = " --launch-product=valorant --launch-patchline=live";
-                            break;
-                        case GameType.LegendsOfRuneterra:
-                            ret.Name = "Legends Of Runeterra";
-                            ret.PathAddition = " --launch-product=bacon --launch-patchline=live";
-                            break;
+                        var gameInfo = new GameInfo();
+                        gameInfo.Location = $"\"{ofd.FileName}\"";
+
+                        switch (gameType)
+                        {
+                            case GameType.LeagueOfLegends:
+                                gameInfo.Name = "League Of Legends";
+                                gameInfo.PathAddition = " --launch-product=league_of_legends --launch-patchline=live";
+                                break;
+                            case GameType.Valorant:
+                                gameInfo.Name = "Valorant";
+                                gameInfo.PathAddition = " --launch-product=valorant --launch-patchline=live";
+                                break;
+                            case GameType.LegendsOfRuneterra:
+                                gameInfo.Name = "Legends Of Runeterra";
+                                gameInfo.PathAddition = " --launch-product=bacon --launch-patchline=live";
+                                break;
+                        }
+                        ret.Add(gameInfo);
                     }
                 }
             }
@@ -163,7 +130,7 @@ namespace RiotGamesLauncher
             return ret;
         }
 
-        private void OnBtnSaveClick(object sender, System.EventArgs e)
+        private void OnBtnSaveClick(object sender, EventArgs e)
         {
             Settings.SaveSettings(new Settings
             {
@@ -171,9 +138,19 @@ namespace RiotGamesLauncher
             });
         }
 
-        private void OnBtnCloseClick(object sender, System.EventArgs e)
+        private void OnBtnCloseClick(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void OnPbGitHubClick(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Cr1TiKa7");
+        }
+
+        private void OnPbTwitchClick(object sender, EventArgs e)
+        {
+            Process.Start("https://www.twitch.tv/cr1tika7");
         }
     }
 }
