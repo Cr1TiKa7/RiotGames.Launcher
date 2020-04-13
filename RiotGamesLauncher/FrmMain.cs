@@ -149,6 +149,7 @@ namespace RiotGamesLauncher
                 GameInfos = _gameInfos,
                 CloseLauncherOnGameStart = cbCloseLauncherOnGameStart.Checked
             });
+            pnlSettings.Visible = false;
         }
 
         private void OnBtnCloseClick(object sender, EventArgs e)
