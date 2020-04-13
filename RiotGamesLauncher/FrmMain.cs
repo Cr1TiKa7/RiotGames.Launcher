@@ -55,16 +55,16 @@ namespace RiotGamesLauncher
         #region "Play Buttons"  
         private void OnBtnPlayLol(object sender, System.EventArgs e)
         {
-
+            StartGame(_gameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends));
         }
         private void OnBtnPlayValorant(object sender, System.EventArgs e)
         {
-
+            StartGame(_gameInfos.FirstOrDefault(x => x.Type == GameType.Valorant));
         }
 
         private void OnBtnPlayLorClick(object sender, System.EventArgs e)
         {
-
+            StartGame(_gameInfos.FirstOrDefault(x=>x.Type == GameType.LegendsOfRuneterra));
         }
 
         private void StartGame(GameInfo game)
