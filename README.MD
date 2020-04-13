@@ -24,5 +24,4 @@ No.
 
 # Upcoming:
 - Implementing a custom window control box (Close, minimize the window).
-- Implementing the settings tab.
 - Fixing some visual stuff.
