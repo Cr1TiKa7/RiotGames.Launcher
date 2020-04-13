@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CustomCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomCheckBox.Designer.cs">
+      <DependentUpon>CustomCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadingIndicator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LoadingIndicator.Designer.cs">
+      <DependentUpon>LoadingIndicator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RoundButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GameLocatorService.cs" />
+    <EmbeddedResource Include="Controls\CustomCheckBox.resx">
+      <DependentUpon>CustomCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoadingIndicator.resx">
+      <DependentUpon>LoadingIndicator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\RoundButton.resx">
       <DependentUpon>RoundButton.cs</DependentUpon>
     </EmbeddedResource>

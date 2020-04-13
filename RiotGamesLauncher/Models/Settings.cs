@@ -8,6 +8,7 @@ namespace RiotGamesLauncher.Models
     public class Settings
     {
         public List<GameInfo> GameInfos { get; set; } = new List<GameInfo>();
+        public bool CloseLauncherOnGameStart { get; set; } = false;
         private const string SETTINGS_PATH = "settings.json";
         public static Settings GetSettings()
         {

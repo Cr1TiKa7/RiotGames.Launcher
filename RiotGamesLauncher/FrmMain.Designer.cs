@@ -34,8 +34,6 @@ namespace RiotGamesLauncher
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
-            this.btnSave = new RiotGamesLauncher.Controls.RoundButton();
-            this.btnBrowse = new RiotGamesLauncher.Controls.RoundButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRiotServicePath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,11 +41,15 @@ namespace RiotGamesLauncher
             this.label3 = new System.Windows.Forms.Label();
             this.pbGitHub = new System.Windows.Forms.PictureBox();
             this.pbTwitch = new System.Windows.Forms.PictureBox();
-            this.btnSettings = new RiotGamesLauncher.Controls.RoundButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnClose = new RiotGamesLauncher.Controls.RoundButton();
+            this.cbCloseLauncherOnGameStart = new RiotGamesLauncher.Controls.CustomCheckBox();
+            this.btnSave = new RiotGamesLauncher.Controls.RoundButton();
+            this.btnBrowse = new RiotGamesLauncher.Controls.RoundButton();
             this.btnPlayValorant = new RiotGamesLauncher.Controls.PlayButton();
             this.btnPlayLol = new RiotGamesLauncher.Controls.PlayButton();
             this.btnPlayerLor = new RiotGamesLauncher.Controls.PlayButton();
+            this.btnSettings = new RiotGamesLauncher.Controls.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlSettings.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -83,6 +85,8 @@ namespace RiotGamesLauncher
             // pnlSettings
             // 
             this.pnlSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlSettings.Controls.Add(this.label4);
+            this.pnlSettings.Controls.Add(this.cbCloseLauncherOnGameStart);
             this.pnlSettings.Controls.Add(this.btnSave);
             this.pnlSettings.Controls.Add(this.btnBrowse);
             this.pnlSettings.Controls.Add(this.label2);
@@ -94,33 +98,6 @@ namespace RiotGamesLauncher
             this.pnlSettings.Size = new System.Drawing.Size(791, 534);
             this.pnlSettings.TabIndex = 9;
             this.pnlSettings.Visible = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.BgColor = System.Drawing.Color.LightGray;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Icon = global::RiotGamesLauncher.Properties.Resources.baseline_save_black_48dp;
-            this.btnSave.Location = new System.Drawing.Point(748, 489);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(30, 30);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Click += new System.EventHandler(this.OnBtnSaveClick);
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.Color.Transparent;
-            this.btnBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBrowse.BgColor = System.Drawing.Color.LightGray;
-            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBrowse.Icon = null;
-            this.btnBrowse.Location = new System.Drawing.Point(366, 70);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(60, 22);
-            this.btnBrowse.TabIndex = 11;
-            this.btnBrowse.Click += new System.EventHandler(this.OnBtnBrowserLolClick);
             // 
             // label2
             // 
@@ -206,18 +183,17 @@ namespace RiotGamesLauncher
             this.pbTwitch.TabStop = false;
             this.pbTwitch.Click += new System.EventHandler(this.OnPbTwitchClick);
             // 
-            // btnSettings
+            // label4
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSettings.BgColor = System.Drawing.Color.LightGray;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Icon = global::RiotGamesLauncher.Properties.Resources.baseline_settings_black_48dp;
-            this.btnSettings.Location = new System.Drawing.Point(982, 6);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(30, 30);
-            this.btnSettings.TabIndex = 8;
-            this.btnSettings.Click += new System.EventHandler(this.OnBtnSettingsClick);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(14, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Close launcher on game start:";
             // 
             // btnClose
             // 
@@ -231,6 +207,42 @@ namespace RiotGamesLauncher
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 10;
             this.btnClose.Click += new System.EventHandler(this.OnBtnCloseClick);
+            // 
+            // cbCloseLauncherOnGameStart
+            // 
+            this.cbCloseLauncherOnGameStart.BackColor = System.Drawing.Color.Transparent;
+            this.cbCloseLauncherOnGameStart.Checked = false;
+            this.cbCloseLauncherOnGameStart.Location = new System.Drawing.Point(212, 103);
+            this.cbCloseLauncherOnGameStart.Name = "cbCloseLauncherOnGameStart";
+            this.cbCloseLauncherOnGameStart.Size = new System.Drawing.Size(39, 22);
+            this.cbCloseLauncherOnGameStart.TabIndex = 13;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.BgColor = System.Drawing.Color.LightGray;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Icon = global::RiotGamesLauncher.Properties.Resources.baseline_save_black_48dp;
+            this.btnSave.Location = new System.Drawing.Point(748, 489);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(30, 30);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Click += new System.EventHandler(this.OnBtnSaveClick);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.Transparent;
+            this.btnBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBrowse.BgColor = System.Drawing.Color.LightGray;
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnBrowse.Icon = null;
+            this.btnBrowse.Location = new System.Drawing.Point(366, 70);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(60, 22);
+            this.btnBrowse.TabIndex = 11;
+            this.btnBrowse.Click += new System.EventHandler(this.OnBtnBrowserLolClick);
             // 
             // btnPlayValorant
             // 
@@ -267,6 +279,19 @@ namespace RiotGamesLauncher
             this.btnPlayerLor.Size = new System.Drawing.Size(341, 534);
             this.btnPlayerLor.TabIndex = 7;
             this.btnPlayerLor.Click += new System.EventHandler(this.OnBtnPlayLorClick);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSettings.BgColor = System.Drawing.Color.LightGray;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Icon = global::RiotGamesLauncher.Properties.Resources.baseline_settings_black_48dp;
+            this.btnSettings.Location = new System.Drawing.Point(982, 6);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(30, 30);
+            this.btnSettings.TabIndex = 8;
+            this.btnSettings.Click += new System.EventHandler(this.OnBtnSettingsClick);
             // 
             // FrmMain
             // 
@@ -317,6 +342,8 @@ namespace RiotGamesLauncher
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbGitHub;
         private System.Windows.Forms.PictureBox pbTwitch;
+        private CustomCheckBox cbCloseLauncherOnGameStart;
+        private System.Windows.Forms.Label label4;
     }
 }
 

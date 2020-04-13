@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using RiotGamesLauncher.Controls;
 using RiotGamesLauncher.Models;
 using RiotGamesLauncher.Models.Types;
 using RiotGamesLauncher.Services;
@@ -13,6 +15,7 @@ namespace RiotGamesLauncher
     {
         private GameLocatorService _gameLocatorService = new GameLocatorService();
         private List<GameInfo> _gameInfos = new List<GameInfo>();
+        private Settings _settings = new Settings();
         public FrmMain()
         {
             InitializeComponent();
@@ -26,6 +29,8 @@ namespace RiotGamesLauncher
             {
                 _gameInfos = settings.GameInfos;
                 txtRiotServicePath.Text = _gameInfos.FirstOrDefault()?.Location;
+                cbCloseLauncherOnGameStart.Checked = settings.CloseLauncherOnGameStart;
+                _settings = settings;
             }
             else
                 GetGameInfos();
@@ -73,6 +78,13 @@ namespace RiotGamesLauncher
             {
                 var processInfo = new ProcessStartInfo(game.Location, game.PathAddition);
                 Process.Start(processInfo);
+                var loadingIndicator = new LoadingIndicator();
+                Controls.Add(loadingIndicator);
+                loadingIndicator.GameInfo = game;
+                loadingIndicator.Location = new Point(342, 179);
+                loadingIndicator.BringToFront();
+                if (_settings != null && _settings.CloseLauncherOnGameStart)
+                    Close();
             }
             else
                 MessageBox.Show(this,
@@ -134,7 +146,8 @@ namespace RiotGamesLauncher
         {
             Settings.SaveSettings(new Settings
             {
-                GameInfos = _gameInfos
+                GameInfos = _gameInfos,
+                CloseLauncherOnGameStart = cbCloseLauncherOnGameStart.Checked
             });
         }
 
