@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace RiotGamesLauncher.Controls
@@ -21,6 +22,8 @@ namespace RiotGamesLauncher.Controls
 
         private void OnPaint(object sender, PaintEventArgs e)
         {
+            e.Graphics.InterpolationMode = InterpolationMode.High;
+            e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
             e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(_fade,0,0,0)),new Rectangle(0,0,Width,Height));
             e.Graphics.DrawString("Play", this.Font, new SolidBrush(ForeColor), new RectangleF(0, 0, Width, Height), _stringFormat);
         }

@@ -103,6 +103,46 @@ namespace RiotGamesLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lol {
+            get {
+                object obj = ResourceManager.GetObject("lol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lol_bg {
+            get {
+                object obj = ResourceManager.GetObject("lol_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lor {
+            get {
+                object obj = ResourceManager.GetObject("lor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lor_bg {
+            get {
+                object obj = ResourceManager.GetObject("lor_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap riotgames_logo {
             get {
                 object obj = ResourceManager.GetObject("riotgames_logo", resourceCulture);
@@ -121,11 +161,101 @@ namespace RiotGamesLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Black {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Black", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Bold {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Italic {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Italic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Light {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Light", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Medium {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Medium", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Regular {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] The_Northern_Block_Ltd___Typold_Condensed_Thin {
+            get {
+                object obj = ResourceManager.GetObject("The_Northern_Block_Ltd___Typold_Condensed_Thin", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap twitch {
             get {
                 object obj = ResourceManager.GetObject("twitch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap valorant {
+            get {
+                object obj = ResourceManager.GetObject("valorant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap valorant_bg {
+            get {
+                object obj = ResourceManager.GetObject("valorant_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

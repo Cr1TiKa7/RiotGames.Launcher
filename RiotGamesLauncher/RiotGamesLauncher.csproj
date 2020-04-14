@@ -71,6 +71,30 @@
     <Compile Include="Controls\CustomCheckBox.Designer.cs">
       <DependentUpon>CustomCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CustomSideBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomSideBar.Designer.cs">
+      <DependentUpon>CustomSideBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameControls\LorGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GameControls\LorGameControl.Designer.cs">
+      <DependentUpon>LorGameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameControls\LolGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GameControls\LolGameControl.Designer.cs">
+      <DependentUpon>LolGameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameControls\ValorantGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GameControls\ValorantGameControl.Designer.cs">
+      <DependentUpon>ValorantGameControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LoadingIndicator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,9 +125,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\GameLocatorService.cs" />
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Controls\CustomCheckBox.resx">
       <DependentUpon>CustomCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomSideBar.resx">
+      <DependentUpon>CustomSideBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GameControls\LorGameControl.resx">
+      <DependentUpon>LorGameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GameControls\LolGameControl.resx">
+      <DependentUpon>LolGameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GameControls\ValorantGameControl.resx">
+      <DependentUpon>ValorantGameControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LoadingIndicator.resx">
       <DependentUpon>LoadingIndicator.cs</DependentUpon>
@@ -119,14 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,10 +203,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\league-of-legends-free-icon-lol-icon-blue-1-png-icon.jpg" />
+    <None Include="Resources\hiclipart.com.png" />
+    <None Include="Resources\Runeterra_Crest_icon.png" />
+    <None Include="Resources\Valorant_icon.png" />
+    <None Include="Resources\wp5312803-legends-of-runeterra-wallpapers.jpg" />
+    <None Include="Resources\1072679.jpg" />
+    <None Include="Resources\hd-league-of-legends-wallpaper_111238420_289.jpg" />
     <Content Include="riot_fist_container_white_red_UGU_icon.ico" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Black.otf" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Bold.otf" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Italic.otf" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Light.otf" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Medium.otf" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Regular.otf" />
+    <None Include="Resources\The Northern Block Ltd - Typold Condensed Thin.otf" />
     <None Include="Resources\twitch.png" />
     <None Include="Resources\github.png" />
     <None Include="Resources\baseline_save_black_48dp.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

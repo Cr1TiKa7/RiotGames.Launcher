@@ -130,13 +130,52 @@
   <data name="github" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\github.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hiclipart.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lol_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hd-league-of-legends-wallpaper_111238420_289.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Runeterra_Crest_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lor_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wp5312803-legends-of-runeterra-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="riotgameslauncher_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\riotgameslauncher_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="riotgames_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Black.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Bold.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Italic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Italic.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Light.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Medium.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Regular.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Northern_Block_Ltd___Typold_Condensed_Thin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Northern Block Ltd - Typold Condensed Thin.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="twitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\twitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="valorant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Valorant_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="valorant_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1072679.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
