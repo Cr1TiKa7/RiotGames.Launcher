@@ -53,6 +53,11 @@ namespace RiotGamesLauncher.Controls
                 {
                     _fade -= 5;
                     Invalidate();
+                    foreach (Control control in Parent.Controls)
+                    {
+                        control.BackColor = Color.FromArgb(_fade, 0, 0, 0);
+                        control.Invalidate();
+                    }
                 }
                 else
                     fadeTimer.Stop();
@@ -64,6 +69,11 @@ namespace RiotGamesLauncher.Controls
                 {
                     _fade += 5;
                     Invalidate();
+                    foreach (Control control in Parent.Controls)
+                    {
+                        control.BackColor = Color.FromArgb(_fade, 0, 0, 0);
+                        control.Invalidate();
+                    }
                 }
                 else
                     fadeTimer.Stop();

@@ -77,6 +77,12 @@
     <Compile Include="Controls\CustomSideBar.Designer.cs">
       <DependentUpon>CustomSideBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CustomControlBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControlBox.Designer.cs">
+      <DependentUpon>CustomControlBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GameControls\LorGameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="Controls\CustomSideBar.resx">
       <DependentUpon>CustomSideBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomControlBox.resx">
+      <DependentUpon>CustomControlBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\GameControls\LorGameControl.resx">
       <DependentUpon>LorGameControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,9 +193,6 @@
     <None Include="Resources\0.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\baseline_settings_black_48dp.png" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
@@ -210,6 +216,12 @@
     <None Include="Resources\wp5312803-legends-of-runeterra-wallpapers.jpg" />
     <None Include="Resources\1072679.jpg" />
     <None Include="Resources\hd-league-of-legends-wallpaper_111238420_289.jpg" />
+    <None Include="Resources\League_of_Legends_logo.png" />
+    <None Include="Resources\Legends_of_Runeterra_logo.png" />
+    <None Include="Resources\Valorant_logo.png" />
+    <None Include="Resources\launchger_bg.png" />
+    <None Include="Resources\launcher_bg.png" />
+    <None Include="Resources\baseline_settings_white_48dp.png" />
     <Content Include="riot_fist_container_white_red_UGU_icon.ico" />
     <None Include="Resources\The Northern Block Ltd - Typold Condensed Black.otf" />
     <None Include="Resources\The Northern Block Ltd - Typold Condensed Bold.otf" />

@@ -28,27 +28,40 @@ namespace RiotGamesLauncher
 
         private void InitializeSideBar()
         {
+            var lol = _gameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends);
+            var lor = _gameInfos.FirstOrDefault(x => x.Type == GameType.LegendsOfRuneterra);
+            var valorant = _gameInfos.FirstOrDefault(x => x.Type == GameType.Valorant);
+            if (lol != null)
+                sideBar.Items.Add(new CustomSideBarItem
+                {
+                    Text = "League of Legends",
+                    Control = new LolGameControl(_settings, lol),
+                    Image = Resources.lol,
+                    AccentColor = Utils.LolAccentColor
+                });
+            if (lor != null)
+                sideBar.Items.Add(new CustomSideBarItem
+                {
+                    Text = "Legends of Runeterra",
+                    Control = new LorGameControl(_settings,lor),
+                    Image = Resources.lor,
+                    AccentColor = Utils.LorAccentColor
+                });
+            if (valorant != null)
+                sideBar.Items.Add(new CustomSideBarItem
+                {
+                    Text = "VALORANT",
+                    Control = new ValorantGameControl(_settings,valorant),
+                    Image = Resources.valorant,
+                    AccentColor = Utils.ValorantAccentColor
+                }); 
             sideBar.Items.Add(new CustomSideBarItem
-            {
-                Text = "League of Legends",
-                Control = new LolGameControl(),
-                Image = Resources.lol,
-                AccentColor = Utils.LolAccentColor
-            });
-            sideBar.Items.Add(new CustomSideBarItem
-            {
-                Text = "Legends of Runeterra",
-                Control = new LorGameControl(),
-                Image = Resources.lor,
-                AccentColor = Utils.LorAccentColor
-            });
-            sideBar.Items.Add(new CustomSideBarItem
-            {
-                Text = "VALORANT",
-                Control = new ValorantGameControl(),
-                Image = Resources.valorant,
-                AccentColor = Utils.ValorantAccentColor
-            });
+                {
+                    Text = "Settings",
+                    Control = new ValorantGameControl(_settings, valorant),
+                    Image = Resources.baseline_settings_white_48dp,
+                    AccentColor = Color.White
+                });
             sideBar.SideBarItemClick += OnSideBarItemClick;
         }
 
@@ -99,20 +112,6 @@ namespace RiotGamesLauncher
             pnlSettings.Visible = !pnlSettings.Visible;
         }
 
-        private void OnBtnPlayLol(object sender, System.EventArgs e)
-        {
-            StartGame(_gameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends));
-        }
-        private void OnBtnPlayValorant(object sender, System.EventArgs e)
-        {
-            StartGame(_gameInfos.FirstOrDefault(x => x.Type == GameType.Valorant));
-        }
-
-        private void OnBtnPlayLorClick(object sender, System.EventArgs e)
-        {
-            StartGame(_gameInfos.FirstOrDefault(x => x.Type == GameType.LegendsOfRuneterra));
-        }
-
         private void OnBtnBrowserLolClick(object sender, EventArgs e)
         {
             var gameInfos = OpenFileDialog();
@@ -147,27 +146,7 @@ namespace RiotGamesLauncher
         #endregion
 
         #region Helper Functions
-        private void StartGame(GameInfo game)
-        {
-            if (game != null)
-            {
-                var processInfo = new ProcessStartInfo(game.Location, game.PathAddition);
-                Process.Start(processInfo);
-                var loadingIndicator = new LoadingIndicator();
-                Controls.Add(loadingIndicator);
-                loadingIndicator.GameInfo = game;
-                loadingIndicator.Location = new Point(342, 179);
-                loadingIndicator.BringToFront();
-                if (_settings != null && _settings.CloseLauncherOnGameStart)
-                    Close();
-            }
-            else
-                MessageBox.Show(this,
-                    "The game path couldn't been located. Please select the right location in the settings tab.",
-                    "Game location not found",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-        }
+      
 
 
         private List<GameInfo> OpenFileDialog()

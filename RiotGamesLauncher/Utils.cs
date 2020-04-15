@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using RiotGamesLauncher.Models;
 
 namespace RiotGamesLauncher
 {
@@ -13,5 +14,9 @@ namespace RiotGamesLauncher
         public static Color LolAccentColor = Color.FromArgb(22, 79, 108);
         public static Color LorAccentColor = Color.FromArgb(172,148,93);
 
+        public static void StartGame(GameInfo game)
+        {
+
+        }
     }
 }

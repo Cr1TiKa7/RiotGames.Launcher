@@ -83,9 +83,9 @@ namespace RiotGamesLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap baseline_settings_black_48dp {
+        internal static System.Drawing.Bitmap baseline_settings_white_48dp {
             get {
-                object obj = ResourceManager.GetObject("baseline_settings_black_48dp", resourceCulture);
+                object obj = ResourceManager.GetObject("baseline_settings_white_48dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +96,46 @@ namespace RiotGamesLauncher.Properties {
         internal static System.Drawing.Bitmap github {
             get {
                 object obj = ResourceManager.GetObject("github", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap launcher_bg {
+            get {
+                object obj = ResourceManager.GetObject("launcher_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap launchger_bg {
+            get {
+                object obj = ResourceManager.GetObject("launchger_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap League_of_Legends_logo {
+            get {
+                object obj = ResourceManager.GetObject("League_of_Legends_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Legends_of_Runeterra_logo {
+            get {
+                object obj = ResourceManager.GetObject("Legends_of_Runeterra_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +296,16 @@ namespace RiotGamesLauncher.Properties {
         internal static System.Drawing.Bitmap valorant_bg {
             get {
                 object obj = ResourceManager.GetObject("valorant_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Valorant_logo {
+            get {
+                object obj = ResourceManager.GetObject("Valorant_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
