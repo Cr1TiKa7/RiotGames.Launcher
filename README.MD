@@ -2,7 +2,7 @@
 This launcher is a simple written launcher for all three games made by Riot Games (League of Legends, Legends of Runeterra and Valorant).  
 It was created because i wanted to get rid of all the icons on my desktop.
 
-![Image](https://i.imgur.com/h6L68J3.png)
+[How it looks](https://i.imgur.com/3L1v29N.gifv)
 
 ## How to install
 Simply download the latest release, extract it and then start it.
@@ -22,8 +22,3 @@ Simply delete it until i've implemented the settings tab.
 
 ## Is this an official launcher made by riot games?
 No.
-
-
-# Upcoming:
-- Implementing a custom window control box (Close, minimize the window).
-- Fixing some visual stuff.
