@@ -1,4 +1,4 @@
-﻿namespace RiotGamesLauncher.Controls.GameControls
+﻿namespace RiotGamesLauncher.Controls
 {
     partial class CustomControlBox
     {

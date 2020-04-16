@@ -1,8 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace RiotGamesLauncher.Controls.GameControls
+namespace RiotGamesLauncher.Controls
 {
     public partial class CustomControlBox : UserControl
     {
@@ -11,6 +12,16 @@ namespace RiotGamesLauncher.Controls.GameControls
         public CustomControlBox()
         {
             InitializeComponent();
+        }
+
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            if (ParentForm == null)
+                return;
+            if (_hoveredIndex == 0)
+                ParentForm.WindowState = FormWindowState.Minimized;
+            else
+                ParentForm.Close();
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -23,15 +34,18 @@ namespace RiotGamesLauncher.Controls.GameControls
                 _hoveredIndex = 1;
 
             Invalidate();
+        }
 
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            _hoveredIndex = -1;
+            Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.InterpolationMode = InterpolationMode.High;
             e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
-
-
             if (_hoveredIndex > -1)
                 e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(40, 255, 255, 255)), new Rectangle(0 + 40 * _hoveredIndex, 0, 40, Height));
 

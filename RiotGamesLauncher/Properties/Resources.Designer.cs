@@ -83,6 +83,26 @@ namespace RiotGamesLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_save_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_save_white_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_search_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_search_white_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_settings_white_48dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_settings_white_48dp", resourceCulture);

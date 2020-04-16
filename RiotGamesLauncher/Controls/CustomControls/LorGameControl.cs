@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 using RiotGamesLauncher.Models;
 
-namespace RiotGamesLauncher.Controls.GameControls
+namespace RiotGamesLauncher.Controls.CustomControls
 {
-    public partial class LolGameControl : UserControl
+    public partial class LorGameControl : UserControl
     {
         private readonly Settings _settings;
         private readonly GameInfo _game;
 
-        public LolGameControl(Settings settings, GameInfo game)
+        public LorGameControl(Settings settings, GameInfo game)
         {
             _settings = settings;
             _game = game;
@@ -26,6 +20,7 @@ namespace RiotGamesLauncher.Controls.GameControls
 
         private void OnPlayButtonClick(object sender, EventArgs e)
         {
+
             if (_game != null)
             {
                 var processInfo = new ProcessStartInfo(_game.Location, _game.PathAddition);
@@ -33,7 +28,7 @@ namespace RiotGamesLauncher.Controls.GameControls
                 var loadingIndicator = new LoadingIndicator();
                 Controls.Add(loadingIndicator);
                 loadingIndicator.GameInfo = _game;
-                loadingIndicator.Location = new Point(342, 179);
+                loadingIndicator.Location = new Point(312, 181);
                 loadingIndicator.BringToFront();
                 if (_settings != null && _settings.CloseLauncherOnGameStart)
                     ParentForm?.Close();

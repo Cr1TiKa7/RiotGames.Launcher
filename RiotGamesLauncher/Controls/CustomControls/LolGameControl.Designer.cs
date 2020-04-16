@@ -1,4 +1,4 @@
-﻿namespace RiotGamesLauncher.Controls.GameControls
+﻿namespace RiotGamesLauncher.Controls.CustomControls
 {
     partial class LolGameControl
     {
@@ -30,6 +30,7 @@
         {
             this.playButton = new RiotGamesLauncher.Controls.PlayButton();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.customControlBox1 = new CustomControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,15 @@
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
+            // customControlBox1
+            // 
+            this.customControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.customControlBox1.Location = new System.Drawing.Point(875, 0);
+            this.customControlBox1.MaximumSize = new System.Drawing.Size(80, 35);
+            this.customControlBox1.Name = "customControlBox1";
+            this.customControlBox1.Size = new System.Drawing.Size(80, 30);
+            this.customControlBox1.TabIndex = 2;
+            // 
             // LolGameControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,6 +73,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::RiotGamesLauncher.Properties.Resources.lol_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.customControlBox1);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.playButton);
             this.Name = "LolGameControl";
@@ -76,5 +87,6 @@
 
         private PlayButton playButton;
         private System.Windows.Forms.PictureBox pbLogo;
+        private CustomControlBox customControlBox1;
     }
 }

@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using RiotGamesLauncher.Controls;
-using RiotGamesLauncher.Controls.GameControls;
+using RiotGamesLauncher.Controls.CustomControls;
 using RiotGamesLauncher.Models;
 using RiotGamesLauncher.Models.Types;
 using RiotGamesLauncher.Properties;
@@ -17,7 +17,6 @@ namespace RiotGamesLauncher
     public partial class FrmMain : Form
     {
         private GameLocatorService _gameLocatorService = new GameLocatorService();
-        private List<GameInfo> _gameInfos = new List<GameInfo>();
         private Settings _settings = new Settings();
         public FrmMain()
         {
@@ -28,9 +27,9 @@ namespace RiotGamesLauncher
 
         private void InitializeSideBar()
         {
-            var lol = _gameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends);
-            var lor = _gameInfos.FirstOrDefault(x => x.Type == GameType.LegendsOfRuneterra);
-            var valorant = _gameInfos.FirstOrDefault(x => x.Type == GameType.Valorant);
+            var lol = _settings.GameInfos.FirstOrDefault(x => x.Type == GameType.LeagueOfLegends);
+            var lor = _settings.GameInfos.FirstOrDefault(x => x.Type == GameType.LegendsOfRuneterra);
+            var valorant = _settings.GameInfos.FirstOrDefault(x => x.Type == GameType.Valorant);
             if (lol != null)
                 sideBar.Items.Add(new CustomSideBarItem
                 {
@@ -58,7 +57,7 @@ namespace RiotGamesLauncher
             sideBar.Items.Add(new CustomSideBarItem
                 {
                     Text = "Settings",
-                    Control = new ValorantGameControl(_settings, valorant),
+                    Control = new SettingsControl(_settings),
                     Image = Resources.baseline_settings_white_48dp,
                     AccentColor = Color.White
                 });
@@ -69,30 +68,23 @@ namespace RiotGamesLauncher
         {
             var settings = Settings.GetSettings();
             if (settings != null)
-            {
-                _gameInfos = settings.GameInfos;
-                txtRiotServicePath.Text = _gameInfos.FirstOrDefault()?.Location;
-                cbCloseLauncherOnGameStart.Checked = settings.CloseLauncherOnGameStart;
                 _settings = settings;
-            }
             else
                 GetGameInfos();
         }
 
         private void GetGameInfos()
         {
+            _settings.GameInfos = new List<GameInfo>();
             var valorant = _gameLocatorService.GetGameLocation(GameType.Valorant);
             if (valorant != null)
-                _gameInfos.Add(valorant);
+                _settings.GameInfos.Add(valorant);
             var lol = _gameLocatorService.GetGameLocation(GameType.LeagueOfLegends);
             if (lol != null)
-                txtRiotServicePath.Text = lol.Location;
-                _gameInfos.Add(lol);
+                _settings.GameInfos.Add(lol);
             var lor = _gameLocatorService.GetGameLocation(GameType.LegendsOfRuneterra);
             if (lor != null)
-                _gameInfos.Add(lor);
-
-            OnBtnSaveClick(null,null);
+                _settings.GameInfos.Add(lor);
         }
 
         #region "Events"
@@ -107,31 +99,8 @@ namespace RiotGamesLauncher
             }
         }
 
-        private void OnBtnSettingsClick(object sender, System.EventArgs e)
-        {
-            pnlSettings.Visible = !pnlSettings.Visible;
-        }
-
         private void OnBtnBrowserLolClick(object sender, EventArgs e)
         {
-            var gameInfos = OpenFileDialog();
-            _gameInfos.Clear();
-            _gameInfos = gameInfos;
-            txtRiotServicePath.Text = gameInfos.FirstOrDefault()?.Location;
-        }
-        private void OnBtnSaveClick(object sender, EventArgs e)
-        {
-            Settings.SaveSettings(new Settings
-            {
-                GameInfos = _gameInfos,
-                CloseLauncherOnGameStart = cbCloseLauncherOnGameStart.Checked
-            });
-            pnlSettings.Visible = false;
-        }
-
-        private void OnBtnCloseClick(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void OnPbGitHubClick(object sender, EventArgs e)
@@ -144,48 +113,5 @@ namespace RiotGamesLauncher
             Process.Start("https://www.twitch.tv/cr1tika7");
         }
         #endregion
-
-        #region Helper Functions
-      
-
-
-        private List<GameInfo> OpenFileDialog()
-        {
-            var ret = new List<GameInfo>();
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "(RiotClientServices.exe) | RiotClientServices.exe";
-                if (ofd.ShowDialog(this) == DialogResult.OK)
-                {
-                    foreach (var gameType in Enum.GetValues(typeof(GameType)))
-                    {
-                        var gameInfo = new GameInfo();
-                        gameInfo.Location = $"\"{ofd.FileName}\"";
-
-                        switch (gameType)
-                        {
-                            case GameType.LeagueOfLegends:
-                                gameInfo.Name = "League Of Legends";
-                                gameInfo.PathAddition = " --launch-product=league_of_legends --launch-patchline=live";
-                                break;
-                            case GameType.Valorant:
-                                gameInfo.Name = "Valorant";
-                                gameInfo.PathAddition = " --launch-product=valorant --launch-patchline=live";
-                                break;
-                            case GameType.LegendsOfRuneterra:
-                                gameInfo.Name = "Legends Of Runeterra";
-                                gameInfo.PathAddition = " --launch-product=bacon --launch-patchline=live";
-                                break;
-                        }
-                        ret.Add(gameInfo);
-                    }
-                }
-            }
-
-            return ret;
-        }
-
-#endregion
-      
     }
 }

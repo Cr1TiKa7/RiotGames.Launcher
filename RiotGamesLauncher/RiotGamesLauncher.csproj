@@ -71,6 +71,12 @@
     <Compile Include="Controls\CustomCheckBox.Designer.cs">
       <DependentUpon>CustomCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CustomControls\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomControls\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CustomSideBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,23 +89,29 @@
     <Compile Include="Controls\CustomControlBox.Designer.cs">
       <DependentUpon>CustomControlBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GameControls\LorGameControl.cs">
+    <Compile Include="Controls\CustomControls\LorGameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\GameControls\LorGameControl.Designer.cs">
+    <Compile Include="Controls\CustomControls\LorGameControl.Designer.cs">
       <DependentUpon>LorGameControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GameControls\LolGameControl.cs">
+    <Compile Include="Controls\CustomControls\LolGameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\GameControls\LolGameControl.Designer.cs">
+    <Compile Include="Controls\CustomControls\LolGameControl.Designer.cs">
       <DependentUpon>LolGameControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GameControls\ValorantGameControl.cs">
+    <Compile Include="Controls\CustomControls\ValorantGameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\GameControls\ValorantGameControl.Designer.cs">
+    <Compile Include="Controls\CustomControls\ValorantGameControl.Designer.cs">
       <DependentUpon>ValorantGameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomTextbox.Designer.cs">
+      <DependentUpon>CustomTextbox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\LoadingIndicator.cs">
       <SubType>UserControl</SubType>
@@ -141,20 +153,26 @@
     <EmbeddedResource Include="Controls\CustomCheckBox.resx">
       <DependentUpon>CustomCheckBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomControls\SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomSideBar.resx">
       <DependentUpon>CustomSideBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomControlBox.resx">
       <DependentUpon>CustomControlBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GameControls\LorGameControl.resx">
+    <EmbeddedResource Include="Controls\CustomControls\LorGameControl.resx">
       <DependentUpon>LorGameControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GameControls\LolGameControl.resx">
+    <EmbeddedResource Include="Controls\CustomControls\LolGameControl.resx">
       <DependentUpon>LolGameControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GameControls\ValorantGameControl.resx">
+    <EmbeddedResource Include="Controls\CustomControls\ValorantGameControl.resx">
       <DependentUpon>ValorantGameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomTextbox.resx">
+      <DependentUpon>CustomTextbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LoadingIndicator.resx">
       <DependentUpon>LoadingIndicator.cs</DependentUpon>
@@ -222,6 +240,8 @@
     <None Include="Resources\launchger_bg.png" />
     <None Include="Resources\launcher_bg.png" />
     <None Include="Resources\baseline_settings_white_48dp.png" />
+    <None Include="Resources\baseline_search_white_48dp.png" />
+    <None Include="Resources\baseline_save_white_48dp.png" />
     <Content Include="riot_fist_container_white_red_UGU_icon.ico" />
     <None Include="Resources\The Northern Block Ltd - Typold Condensed Black.otf" />
     <None Include="Resources\The Northern Block Ltd - Typold Condensed Bold.otf" />

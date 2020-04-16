@@ -71,6 +71,8 @@ namespace RiotGamesLauncher.Controls
                     Invalidate();
                     foreach (Control control in Parent.Controls)
                     {
+                        if (control == Parent)
+                            continue;
                         control.BackColor = Color.FromArgb(_fade, 0, 0, 0);
                         control.Invalidate();
                     }

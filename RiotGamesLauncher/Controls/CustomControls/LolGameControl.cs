@@ -1,22 +1,24 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using RiotGamesLauncher.Models;
 
-namespace RiotGamesLauncher.Controls.GameControls
+namespace RiotGamesLauncher.Controls.CustomControls
 {
-    public partial class ValorantGameControl : UserControl
+    public partial class LolGameControl : UserControl
     {
         private readonly Settings _settings;
         private readonly GameInfo _game;
-        public ValorantGameControl(Settings settings, GameInfo game)
+
+        public LolGameControl(Settings settings, GameInfo game)
         {
             _settings = settings;
             _game = game;
             InitializeComponent();
         }
 
-        private void OnPlayButtonClick(object sender, System.EventArgs e)
+        private void OnPlayButtonClick(object sender, EventArgs e)
         {
             if (_game != null)
             {
@@ -25,7 +27,7 @@ namespace RiotGamesLauncher.Controls.GameControls
                 var loadingIndicator = new LoadingIndicator();
                 Controls.Add(loadingIndicator);
                 loadingIndicator.GameInfo = _game;
-                loadingIndicator.Location = new Point(342, 179);
+                loadingIndicator.Location = new Point(312, 181);
                 loadingIndicator.BringToFront();
                 if (_settings != null && _settings.CloseLauncherOnGameStart)
                     ParentForm?.Close();

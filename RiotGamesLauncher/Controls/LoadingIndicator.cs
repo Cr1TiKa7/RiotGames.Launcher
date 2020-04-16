@@ -40,13 +40,13 @@ namespace RiotGamesLauncher.Controls
             switch (gameInfoType)
             {
                 case GameType.LegendsOfRuneterra:
-                    _progressBarBrush = new SolidBrush(Color.FromArgb(238,135,12));
+                    _progressBarBrush = new SolidBrush(Utils.LorAccentColor);
                     break;
                 case GameType.LeagueOfLegends:
-                    _progressBarBrush = new SolidBrush(Color.FromArgb(63, 158, 255));
+                    _progressBarBrush = new SolidBrush(Utils.LolAccentColor);
                     break;
                 case GameType.Valorant:
-                    _progressBarBrush = new SolidBrush(Color.FromArgb(191, 55, 59));
+                    _progressBarBrush = new SolidBrush(Utils.ValorantAccentColor);
                     break;
             }
         }
